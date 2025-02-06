@@ -1,5 +1,3 @@
-type LogoStyle = 'abstract' | 'text' | 'icon' | 'minimal';
-
 type ColorScheme = {
   primary: string;
   secondary: string;
@@ -61,8 +59,8 @@ function generateAbstractLogo(name: string, industry: string): string {
   // Create SVG patterns based on the hash
   const patterns = [
     createCirclePattern(hash, colors),
-    createTrianglePattern(hash, colors),
-    createSquarePattern(hash, colors)
+    createTrianglePattern(hash),
+    createSquarePattern(hash)
   ];
 
   const selectedPattern = patterns[Math.abs(hash) % patterns.length];
@@ -115,7 +113,7 @@ function createCirclePattern(hash: number, _colors: ColorScheme): string {
   return circles.join('');
 }
 
-function createTrianglePattern(hash: number, _colors: ColorScheme): string {
+function createTrianglePattern(hash: number): string {
   const points = [
     `${50 + (hash % 50)},${50 + (hash % 30)}`,
     `${150 - (hash % 50)},${50 + (hash % 30)}`,
@@ -131,7 +129,7 @@ function createTrianglePattern(hash: number, _colors: ColorScheme): string {
   `;
 }
 
-function createSquarePattern(hash: number, _colors: ColorScheme): string {
+function createSquarePattern(hash: number): string {
   const squares = [];
   for (let i = 0; i < 3; i++) {
     const x = 40 + ((hash * i) % 80);

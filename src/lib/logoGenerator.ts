@@ -58,7 +58,7 @@ function generateAbstractLogo(name: string, industry: string): string {
 
   // Create SVG patterns based on the hash
   const patterns = [
-    createCirclePattern(hash, colors),
+    createCirclePattern(hash),
     createTrianglePattern(hash),
     createSquarePattern(hash)
   ];
@@ -94,7 +94,7 @@ function generateAbstractLogo(name: string, industry: string): string {
   `;
 }
 
-function createCirclePattern(hash: number, _colors: ColorScheme): string {
+function createCirclePattern(hash: number): string {
   const circles = [];
   for (let i = 0; i < 5; i++) {
     const cx = 40 + (hash % 120);

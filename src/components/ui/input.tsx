@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils"
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  // Add any custom props here if needed
+  // This interface is intentionally left empty as it only extends HTMLInputElement attributes
+  // Additional props can be added here if needed in the future
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(

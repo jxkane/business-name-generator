@@ -22,7 +22,15 @@ const registrars: DomainRegistrar[] = [
   }
 ];
 
-export async function checkDomainAvailability(name: string, suffixes: DomainSuffix[] = ['.com']): Promise<any[]> {
+export async function checkDomainAvailability(name: string, suffixes: DomainSuffix[] = ['.com']): Promise<{
+  domain: string;
+  available: boolean;
+  registrars: {
+    name: string;
+    url: string;
+    priceRange: string;
+  }[];
+}[]> {
   try {
     // Remove spaces and special characters
     const cleanName = name.toLowerCase()

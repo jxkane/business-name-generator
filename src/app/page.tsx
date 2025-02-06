@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { checkDomainAvailability } from '@/lib/domains';
 import { checkTrademarkCompatibility } from '@/lib/trademark';
 import { checkSocialAvailability } from '@/lib/social';
-import { generateNames as generateIndustryNames } from '@/lib/nameGenerator';
 import { generateLogo } from '@/lib/logoGenerator';
 
 // Add these new types

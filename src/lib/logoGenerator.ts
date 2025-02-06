@@ -96,7 +96,7 @@ function generateAbstractLogo(name: string, industry: string): string {
   `;
 }
 
-function createCirclePattern(hash: number, colors: ColorScheme): string {
+function createCirclePattern(hash: number, _colors: ColorScheme): string {
   const circles = [];
   for (let i = 0; i < 5; i++) {
     const cx = 40 + (hash % 120);
@@ -115,7 +115,7 @@ function createCirclePattern(hash: number, colors: ColorScheme): string {
   return circles.join('');
 }
 
-function createTrianglePattern(hash: number, colors: ColorScheme): string {
+function createTrianglePattern(hash: number, _colors: ColorScheme): string {
   const points = [
     `${50 + (hash % 50)},${50 + (hash % 30)}`,
     `${150 - (hash % 50)},${50 + (hash % 30)}`,
@@ -131,7 +131,7 @@ function createTrianglePattern(hash: number, colors: ColorScheme): string {
   `;
 }
 
-function createSquarePattern(hash: number, colors: ColorScheme): string {
+function createSquarePattern(hash: number, _colors: ColorScheme): string {
   const squares = [];
   for (let i = 0; i < 3; i++) {
     const x = 40 + ((hash * i) % 80);
@@ -153,7 +153,6 @@ function createSquarePattern(hash: number, colors: ColorScheme): string {
   return squares.join('');
 }
 
-export function generateLogo(name: string, industry: string, style: LogoStyle = 'abstract'): string {
-  // For now, we only have abstract style
+export function generateLogo(name: string, industry: string): string {
   return generateAbstractLogo(name, industry);
 } 

@@ -24,7 +24,6 @@ export async function checkTrademarkCompatibility(name: string): Promise<Tradema
       // Add more common trademarks
     ]);
 
-    const words = cleanName.split(/(?=[A-Z])/);
     let riskLevel: 'low' | 'medium' | 'high' = 'low';
     const similarMarks: string[] = [];
     let advice = 'This name appears to be safe to use.';
